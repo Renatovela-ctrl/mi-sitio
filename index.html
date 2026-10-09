@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hoja de vida · Ingeniería en Telecomunicaciones</title>
+<meta name="description" content="Hoja de vida de un estudiante de Ingeniería en Telecomunicaciones: sistemas embebidos, RF, VHDL/FPGA y control.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314213D'/%3E%3Cpath d='M3 16c3-12 6-12 9 0s6 12 9 0 5-8 8-4' fill='none' stroke='%23C9A227' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F7F6; --paper2:#E9EFEE; --ink:#14213D; --ink2:#44506B; --line:#C9D3D5;
+  --signal:#2457D6; --gold:#B8891A; --gold-bg:#F3E7BF;
+  --display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --body:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#0F1A2E; --paper2:#15233D; --ink:#E8EEF7; --ink2:#A5B3CC; --line:#27375A; --signal:#7DA2FF; --gold:#E0B84A; --gold-bg:#3A3217;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.65 var(--body);-webkit-font-smoothing:antialiased;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:28px 28px; background-position:-1px -1px; background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;background:var(--paper);opacity:.86;pointer-events:none;z-index:-1}
+a{color:var(--signal);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* barra superior */
+.bar{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;gap:22px;height:56px}
+.bar .brand{font:700 18px var(--display);color:var(--ink);text-decoration:none;margin-right:auto}
+.bar nav{display:flex;gap:20px;font-size:15px}
+.bar nav a{color:var(--ink2);text-decoration:none}
+.bar nav a:hover{color:var(--ink)}
+@media (max-width:760px){.bar nav{display:none}}
+
+/* hero */
+.hero{padding:72px 0 40px}
+.hero h1{font:800 clamp(56px,11vw,132px)/.92 var(--display);letter-spacing:-.035em;margin:0 0 20px}
+.hero .role{font:600 clamp(20px,2.6vw,28px)/1.25 var(--display);margin:0 0 8px}
+.hero .place{color:var(--ink2);margin:0 0 22px}
+.hero .tag{max-width:34ch;font-size:20px;line-height:1.5;color:var(--ink2);margin:0}
+.scope{margin-top:44px;border:1.5px solid var(--ink);border-radius:10px;background:var(--paper2);overflow:hidden}
+.scope header{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 16px;border-bottom:1.5px solid var(--ink);font-size:14px;color:var(--ink2)}
+.scope header b{color:var(--ink);font-weight:600}
+.scope canvas{display:block;width:100%;height:190px}
+.scope .ctl{display:flex;flex-wrap:wrap;gap:20px;padding:12px 16px;border-top:1px solid var(--line);font-size:14px;color:var(--ink2);align-items:center}
+.scope label{display:flex;align-items:center;gap:10px}
+.scope input[type=range]{accent-color:var(--signal);width:150px}
+.scope output{min-width:3.4em;color:var(--ink);font-variant-numeric:tabular-nums;font-weight:600}
+
+/* secciones */
+section{padding:56px 0;border-top:1px solid var(--line)}
+section h2{font:700 clamp(28px,4vw,40px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 28px}
+.cols{display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:40px}
+@media (max-width:760px){.cols{grid-template-columns:1fr;gap:8px}}
+.about p{max-width:62ch;margin:0 0 16px;font-size:19px}
+
+/* proyectos tipo datasheet */
+.proj{display:grid;grid-template-columns:minmax(0,1fr) 270px;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0;padding-top:0}
+.proj h3{font:700 23px/1.2 var(--display);margin:0 0 6px}
+.proj .kind{display:inline-block;font-size:13px;font-weight:600;color:var(--gold);background:var(--gold-bg);padding:2px 9px;border-radius:4px;margin-bottom:10px}
+.proj p{margin:0;max-width:60ch}
+.specs{margin:0;border:1px solid var(--line);border-radius:8px;background:var(--paper2);align-self:start;font-size:14.5px}
+.specs div{display:flex;justify-content:space-between;gap:12px;padding:8px 12px;border-bottom:1px solid var(--line)}
+.specs div:last-child{border-bottom:0}
+.specs dt{color:var(--ink2)} .specs dd{margin:0;font-weight:500;text-align:right}
+@media (max-width:760px){.proj{grid-template-columns:1fr;gap:14px}}
+
+/* listas */
+.entry{padding:0 0 22px}
+.entry h3{font:700 21px/1.25 var(--display);margin:0}
+.entry .org{color:var(--ink2);margin:2px 0}
+.entry .when{display:inline-block;font-size:14px;font-weight:600;color:var(--signal);margin-bottom:6px}
+.entry p{margin:0;max-width:62ch}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:26px}
+.skills h3{font:700 17px var(--display);margin:0 0 10px}
+.skills ul,.plain{margin:0;padding:0;list-style:none}
+.skills li{padding:5px 0;border-top:1px solid var(--line)}
+.plain li{padding:6px 0;border-top:1px solid var(--line)}
+.langs{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px}
+.langs span b{font-weight:600}
+.contact a{display:inline-block;margin:0 18px 8px 0}
+footer{padding:36px 0 56px;border-top:1px solid var(--line);color:var(--ink2);font-size:14.5px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media print{.bar,.scope,.lock{display:none}body{background:#fff}body::before{display:none}section{padding:22px 0;break-inside:avoid}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#inicio" id="brand"></a>
+    <nav aria-label="Secciones">
+      <a href="#perfil">Perfil</a><a href="#experiencia">Experiencia</a><a href="#proyectos">Proyectos</a><a href="#formacion">Formación</a>
+      <a href="#habilidades">Habilidades</a><a href="#voluntariado">Voluntariado</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+  <div class="wrap">
+    <div class="hero">
+      <h1 id="name"></h1>
+      <p class="role" id="role"></p>
+      <p class="place" id="place"></p>
+      <p class="tag" id="tagline"></p>
+
+      <div class="scope" aria-label="Demostración: señal portadora modulada en amplitud">
+        <header><span><b>Señal modulada en AM</b> · portadora × mensaje</span><span id="readout"></span></header>
+        <canvas id="cv" role="img" aria-label="Gráfica animada de una portadora senoidal modulada en amplitud"></canvas>
+        <div class="ctl">
+          <label>Portadora <input id="fc" type="range" min="6" max="40" value="22"><output id="fcv"></output></label>
+          <label>Mensaje <input id="fm" type="range" min="1" max="6" value="2"><output id="fmv"></output></label>
+          <label>Profundidad <input id="mi" type="range" min="0" max="100" value="70"><output id="miv"></output></label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <section id="perfil"><div class="cols"><h2>Perfil</h2><div class="about" id="about"></div></div></section>
+    <section id="experiencia"><div class="cols"><h2>Experiencia</h2><div id="experience"></div></div></section>
+    <section id="proyectos"><h2>Proyectos</h2><div id="projects"></div></section>
+    <section id="formacion"><div class="cols"><h2>Formación</h2><div id="education"></div></div></section>
+    <section id="habilidades"><h2>Habilidades</h2><div class="skills" id="skills"></div></section>
+    <section id="voluntariado"><div class="cols"><h2>Voluntariado</h2><div id="volunteering"></div></div></section>
+    <section id="certificados"><div class="cols"><h2>Certificados e idiomas</h2>
+      <div><ul class="plain" id="certs"></ul><div class="langs" id="langs"></div><p id="interests" style="margin-top:22px;color:var(--ink2)"></p></div></div></section>
+    <section id="contacto" class="contact" hidden><div class="cols"><h2>Contacto</h2><div id="contact"></div></div></section>
+  </div>
+</main>
+<footer><div class="wrap"><span id="footer"></span><span>Cuenca, Ecuador</span></div></footer>
+
+<script src="cv-data.js"></script>
+<script>
+(function(){
+  const C = window.CV, $ = id => document.getElementById(id);
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  document.title = C.name + " · " + C.role;
+  $("brand").textContent = C.name; $("name").textContent = C.name; $("role").textContent = C.role;
+  $("place").textContent = C.place; $("tagline").textContent = C.tagline;
+  $("about").innerHTML = C.about.map(p => `<p>${esc(p)}</p>`).join("");
+  $("projects").innerHTML = C.projects.map(p => `
+    <article class="proj"><div><span class="kind">${esc(p.tag)}</span><h3>${esc(p.name)}</h3><p>${esc(p.summary)}</p></div>
+    <dl class="specs">${p.specs.map(s => `<div><dt>${esc(s[0])}</dt><dd>${esc(s[1])}</dd></div>`).join("")}</dl></article>`).join("");
+  const entry = e => `<div class="entry"><h3>${esc(e.title)}</h3><div class="org">${esc(e.org)}</div><span class="when">${esc(e.when)}</span><p>${esc(e.detail)}</p></div>`;
+  $("education").innerHTML = C.education.map(entry).join("");
+  $("experience").innerHTML = (C.experience || []).map(entry).join("");
+  $("volunteering").innerHTML = C.volunteering.map(entry).join("");
+  $("skills").innerHTML = C.skills.map(g => `<div><h3>${esc(g.group)}</h3><ul>${g.items.map(i => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("");
+  $("certs").innerHTML = C.certs.map(c => `<li>${esc(c)}</li>`).join("");
+  $("langs").innerHTML = C.languages.map(l => `<span><b>${esc(l[0])}</b> · ${esc(l[1])}</span>`).join("");
+  $("interests").textContent = "Fuera de la ingeniería: " + C.interests.charAt(0).toLowerCase() + C.interests.slice(1);
+  $("footer").textContent = C.footer;
+  if (C.contact && C.contact.length) {
+    $("contacto").hidden = false;
+    $("contact").innerHTML = C.contact.map(c => `<a href="${esc(c.href)}" rel="noopener">${esc(c.text)}</a>`).join("");
+  }
+
+  /* --- osciloscopio AM --- */
+  const cv = $("cv"), ctx = cv.getContext("2d");
+  const fc = $("fc"), fm = $("fm"), mi = $("mi");
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let W, H, dpr, t0 = performance.now(), running = true;
+  function size(){ dpr = devicePixelRatio || 1; W = cv.clientWidth; H = cv.clientHeight; cv.width = W*dpr; cv.height = H*dpr; ctx.setTransform(dpr,0,0,dpr,0,0); }
+  addEventListener("resize", () => { size(); draw(performance.now()); });
+  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  function labels(){
+    $("fcv").textContent = fc.value + " ciclos"; $("fmv").textContent = fm.value + " ciclos"; $("miv").textContent = mi.value + " %";
+    $("readout").textContent = "m = " + (mi.value/100).toFixed(2);
+  }
+  [fc,fm,mi].forEach(e => e.addEventListener("input", () => { labels(); if (reduce) draw(performance.now()); }));
+  function draw(now){
+    const t = reduce ? 0 : (now - t0)/1000, m = mi.value/100, nc = +fc.value, nm = +fm.value;
+    ctx.clearRect(0,0,W,H);
+    ctx.lineWidth = 1; ctx.strokeStyle = css("--line");
+    ctx.beginPath();
+    for (let i=0;i<=10;i++){ const x = i*W/10; ctx.moveTo(x,0); ctx.lineTo(x,H); }
+    for (let j=0;j<=4;j++){ const y = j*H/4; ctx.moveTo(0,y); ctx.lineTo(W,y); }
+    ctx.stroke();
+    const mid = H/2, amp = H*.38, N = Math.max(400, W*2);
+    const env = x => 1 + m*Math.sin(2*Math.PI*(nm*x - t*.12));
+    // envolvente
+    ctx.strokeStyle = css("--gold"); ctx.lineWidth = 1.8; ctx.setLineDash([6,5]);
+    for (const s of [1,-1]) { ctx.beginPath(); for (let i=0;i<=N;i++){ const x=i/N; const y = mid - s*amp*env(x)/(1+m); i?ctx.lineTo(x*W,y):ctx.moveTo(x*W,y);} ctx.stroke(); }
+    ctx.setLineDash([]);
+    // señal
+    ctx.strokeStyle = css("--signal"); ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (let i=0;i<=N;i++){ const x=i/N; const y = mid - amp*env(x)/(1+m)*Math.sin(2*Math.PI*(nc*x - t*.9)); i?ctx.lineTo(x*W,y):ctx.moveTo(x*W,y); }
+    ctx.stroke();
+    if (running && !reduce) requestAnimationFrame(draw);
+  }
+  document.addEventListener("visibilitychange", () => { running = !document.hidden; if (running && !reduce) requestAnimationFrame(draw); });
+  matchMedia("(prefers-color-scheme: dark)").addEventListener("change", () => draw(performance.now()));
+  size(); labels(); requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
